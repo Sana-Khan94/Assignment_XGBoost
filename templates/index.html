@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">predicting whether a person makes over
+        50K per year or not from classic adult dataset using XGBoost.</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" name="age" id="age" placeholder="age" step="any">
+            <input type="number" name="workclass" id="worclass" placeholder="workclass" step="any">
+            <input type="number" name="fnlwgt" id="fnlwgt" placeholder="fnlwgt" step="any">
+            <input type="number" name="education_num" id="education_num" placeholder="education_num" step="any">
+            <input type="number" name="marital_status" id="marital_status" placeholder="marital_status" step="any">
+            <input type="number" name="occupation" id="occupation" placeholder="occupation" step="any">
+            <input type="number" name="relationship" id="relationship" placeholder="relationship" step="any">
+            <input type="number" name="race" id="race" placeholder="race" step="any">
+            <input type="number" name="sex" id="sex" placeholder="sex" step="any">
+            <input type="number" name="capital_gain" id="capital_gain" placeholder="capital_gain" step="any">
+            <input type="number" name="capital_loss" id="capital_loss" placeholder="capital_loss" step="any">
+            <input type="number" name="hours_per_week" id="hours_per_week" placeholder="hours_per_week" step="any">
+            <input type="number" name="native_country" id="native_country" placeholder="native_country" step="any">
+            <input type="submit" value="Predict">
+
+        </form>
+    </div>
+</div>
+{% endblock %}
